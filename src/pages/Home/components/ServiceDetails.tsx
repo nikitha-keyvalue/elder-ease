@@ -4,6 +4,8 @@ import {
   Box,
   Button,
   Checkbox,
+  Dialog,
+  DialogContent,
   FormControl,
   FormControlLabel,
   Grid,
@@ -36,6 +38,8 @@ const ServiceDetails: React.FC = () => {
     lat: 28.6139,
     lng: 77.209,
   });
+
+  const [openPaymentModal, setOpenPaymentModal] = useState(false);
 
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
@@ -381,12 +385,31 @@ const ServiceDetails: React.FC = () => {
           <Button
             variant="contained"
             sx={{ color: "#fff" }}
-            onClick={() => handleSubmit()}
+            onClick={() => {
+              handleSubmit();
+              setOpenPaymentModal(true);
+            }}
           >
             Book Now
           </Button>
         </Box>
       </Box>
+      <Dialog
+        open={openPaymentModal}
+        onClose={() => setOpenPaymentModal(false)}
+      >
+        <DialogContent
+          sx={{
+            height: "200px",
+            display: "flex",
+            justifyContent: "center",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="h4">Redirecting to payment ...</Typography>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };

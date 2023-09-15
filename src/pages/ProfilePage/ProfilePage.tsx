@@ -74,15 +74,16 @@ const ProfilePage = () => {
     <Box mb={2}>
       <Box
         sx={({ palette }: any) => ({
-          backgroundColor: palette.primary.main,
-          height: "90px",
+          backgroundColor: palette.white.main,
+          height: "60px",
           display: "flex",
           alignItems: "center",
           mb: 2,
+          boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)",
         })}
       >
-        <Typography sx={{ ml: 2, color: "whitesmoke" }}>
-          Set Up Your Profile
+        <Typography sx={{ ml: 2, color: "#00A699", fontWeight: "bold" }}>
+          Set up your profile
         </Typography>
       </Box>
       <Grid

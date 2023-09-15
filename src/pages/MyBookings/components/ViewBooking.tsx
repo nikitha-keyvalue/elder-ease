@@ -1,21 +1,10 @@
-import {
-  Box,
-  Typography,
-  IconButton,
-  Avatar,
-  Card,
-  CardContent,
-  Divider,
-} from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import { Box, Typography, Card, CardContent, Divider } from "@mui/material";
+
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 import Map from "../../Maps/Map";
 
 const ViewBooking: React.FC = () => {
-  const navigate = useNavigate();
-
   const userLocation = {
     lat: 13.031812,
     lng: 77.4793,
@@ -28,29 +17,25 @@ const ViewBooking: React.FC = () => {
 
   return (
     <>
-      <Box padding={"16px"}>
-        <Box onClick={() => navigate(-1)}>
-          <ArrowBackIosNewIcon sx={{ marginBottom: "8px", color: "#000" }} />
-        </Box>
-        <Box
-          display={"flex"}
-          justifyContent={"space-between"}
-          alignItems={"center"}
-        >
-          <Typography variant="h3" sx={{ color: "#000" }}>
-            Booking #102356
-          </Typography>
-          <IconButton sx={{ p: 0 }}>
-            <Avatar alt="Remy Sharp" src="/user.png" />
-          </IconButton>
-        </Box>
+      <Box
+        display={"flex"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        height="60px"
+        sx={{ boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)" }}
+      >
+        <Typography variant="h3" sx={{ color: "#00A699", ml: 2 }}>
+          Booking #102356
+        </Typography>
+      </Box>
+      <Box paddingX={"16px"} mb={2}>
         <Card
           variant="outlined"
           sx={{
             boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)",
             border: 0,
             borderRadius: "3px",
-            marginTop: "30px",
+            marginTop: "10px",
           }}
         >
           <CardContent>
@@ -237,7 +222,12 @@ const ViewBooking: React.FC = () => {
             </span>
             <Typography
               variant="h6"
-              sx={{ color: "#000", marginLeft: "9px", marginTop: "8px", fontWeight: 100 }}
+              sx={{
+                color: "#000",
+                marginLeft: "9px",
+                marginTop: "8px",
+                fontWeight: 100,
+              }}
             >
               *Note that this amount is only applicable for the first four
               hours. An extra ₹50 will be charged for every extra hour.

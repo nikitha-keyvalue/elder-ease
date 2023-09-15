@@ -1,28 +1,25 @@
-import { Avatar, Box, IconButton, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import SearchBar from "../Home/components/SearchBar";
 import BookingsCard from "./components/Card";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import { useNavigate } from "react-router-dom";
 
 const MyBookings: React.FC = () => {
-  const navigate = useNavigate();
   return (
     <>
       {/* <Navbar /> */}
-      <Box padding={"16px"}>
-        <Box onClick={() => navigate(-1)}>
-          <ArrowBackIosNewIcon sx={{ marginBottom: "8px", color: "#000" }} />
-        </Box>
-        <Box display={"flex"} justifyContent={"space-between"} alignItems={'center'}>
-          <Typography variant="h3" sx={{ color: "#000" }}>
-            My Bookings
-          </Typography>
-          <IconButton sx={{ p: 0 }}>
-            <Avatar alt="Remy Sharp" src="/user.png" />
-          </IconButton>
-        </Box>
+      <Box
+        display={"flex"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        height="60px"
+        sx={{ boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)" }}
+      >
+        <Typography variant="h3" sx={{ ml: 3, color: "#00A699" }}>
+          My Bookings
+        </Typography>
+      </Box>
+      <Box paddingX={"15px"}>
         <SearchBar marginLeft={0} width={"100%"} />
-        <Box marginTop={"40px"}>
+        <Box marginTop={"20px"}>
           <BookingsCard />
         </Box>
       </Box>

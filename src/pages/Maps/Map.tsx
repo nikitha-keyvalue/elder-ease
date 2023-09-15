@@ -55,8 +55,6 @@ const Map: FC<Props> = ({
     }
   };
 
-  console.log(userLocation);
-
   return (
     <>
       {!isTracking ? (

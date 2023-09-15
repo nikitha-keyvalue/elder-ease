@@ -9,42 +9,36 @@ import {
   TextField,
   Button,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { useState } from "react";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
 
 const ViewCompletedBooking: React.FC = () => {
-  const navigate = useNavigate();
   const [rating, setRating] = useState([0, 0, 0, 0, 0]);
   console.log({ rating });
   return (
     <>
-      <Box padding={"16px"}>
-        <Box onClick={() => navigate(-1)}>
-          <ArrowBackIosNewIcon sx={{ marginBottom: "8px", color: "#000" }} />
-        </Box>
-        <Box
-          display={"flex"}
-          justifyContent={"space-between"}
-          alignItems={"center"}
-        >
-          <Typography variant="h3" sx={{ color: "#000" }}>
-            Booking #102359
-          </Typography>
-          <IconButton sx={{ p: 0 }}>
-            <Avatar alt="Remy Sharp" src="/user.png" />
-          </IconButton>
-        </Box>
+      <Box
+        display={"flex"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        height="60px"
+        sx={{ boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)" }}
+      >
+        <Typography variant="h3" sx={{ color: "#00A699", ml: 2 }}>
+          Booking #102359
+        </Typography>
+      </Box>
+      <Box paddingX={"16px"}>
         <Card
           variant="outlined"
           sx={{
             boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)",
             border: 0,
             borderRadius: "3px",
-            marginTop: "30px",
+            marginTop: "20px",
           }}
         >
           <CardContent>
