@@ -20,6 +20,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider, TimePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useState } from "react";
+import Map from "../../Maps/Map";
 
 const ServiceDetails: React.FC = () => {
   const defaultOptions = {
@@ -27,6 +28,11 @@ const ServiceDetails: React.FC = () => {
     loop: true,
     animationData: animationData,
   };
+
+  const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral>({
+    lat: 28.6139,
+    lng: 77.209,
+  });
 
   const [recurringEventValue, setRecurringEventValue] = useState(false);
 
@@ -113,18 +119,13 @@ const ServiceDetails: React.FC = () => {
             </LocalizationProvider>
           </Grid>
         </Grid>
-        <TextField
-          InputLabelProps={{
-            style: {
-              fontSize: "14px",
-            },
-          }}
-          label="Pick Up Location"
-          variant="outlined"
-          fullWidth
-          size="small"
-          sx={{ mb: 1.5, "& .MuiInputBase-input": { fontSize: "14px" } }}
-        />
+        <Grid item mb={2}>
+          <Map
+            userLocation={userLocation}
+            setUserLocation={setUserLocation}
+            defaultLocation={false}
+          />
+        </Grid>
         <FormControl fullWidth size="small">
           <InputLabel
             id="demo-simple-select-label"

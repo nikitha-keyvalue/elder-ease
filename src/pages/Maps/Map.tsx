@@ -9,9 +9,14 @@ interface Props {
   setUserLocation: React.Dispatch<
     React.SetStateAction<google.maps.LatLngLiteral>
   >;
+  defaultLocation?: boolean;
 }
 
-const Map: FC<Props> = ({ userLocation, setUserLocation }) => {
+const Map: FC<Props> = ({
+  userLocation,
+  setUserLocation,
+  defaultLocation = true,
+}) => {
   const [zipCode, setZipcode] = useState<number>(110001);
   const [map, setMap] = useState<google.maps.Map | null>(null);
 
@@ -53,7 +58,7 @@ const Map: FC<Props> = ({ userLocation, setUserLocation }) => {
           InputLabelProps={{
             style: {
               fontSize: "14px",
-              width: "80%",
+              width: "90%",
             },
           }}
           type="number"
@@ -76,8 +81,15 @@ const Map: FC<Props> = ({ userLocation, setUserLocation }) => {
         </Button>
       </Grid>
       <Grid item>
-        <Typography style={{ fontSize: "12px", marginTop: "-10px" }}>
-          Please provide your ZIP code and hit "Enter" to set default location
+        <Typography
+          style={{
+            fontSize: "12px",
+            marginTop: "-10px",
+            marginBottom: "-10px",
+          }}
+        >
+          Please provide your ZIP code and hit "Enter" to set{" "}
+          {defaultLocation ? "default" : ""} location
         </Typography>
       </Grid>
       <Grid item>
