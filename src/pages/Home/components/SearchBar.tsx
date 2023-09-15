@@ -1,19 +1,18 @@
 import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import { InputBase } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: "#67748E",
-  opacity: 0.3,
+  borderRadius: "4px",
+  backgroundColor: "#fff",
   marginLeft: 0,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(1),
     width: "auto",
   },
+  boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.1)",
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -27,39 +26,33 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "#fff",
+  color: "#060c0c69",
+  opacity: 1,
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     fontSize: "16px",
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    // transition: theme.transitions.create("width"),
     width: "100%",
-    // [theme.breakpoints.up("sm")]: {
-    //   width: "12ch",
-    //   "&:focus": {
-    //     width: "20ch",
-    //   },
-    // },
   },
 }));
 
-const SearchBar: React.FC = () => {
+const SearchBar = ({ marginLeft, width }: { marginLeft?: string | number, width?: any }) => {
   return (
     <div
       style={{
         marginTop: "20px",
-        width: "90%",
-        marginLeft: "calc(100vw - 95%)",
+        width: width ?? "90%",
+        marginLeft: marginLeft ?? "calc(100vw - 95%)",
       }}
     >
       <Search>
         <SearchIconWrapper>
-          <SearchIcon sx={{ color: "#fff" }} />
+          <SearchIcon sx={{ color: "#98aeaf69" }} />
         </SearchIconWrapper>
         <StyledInputBase
           placeholder="Search…"
           inputProps={{ "aria-label": "search" }}
+          sx={{ paddingTop: "4px" }}
         />
       </Search>
     </div>
