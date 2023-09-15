@@ -26,7 +26,7 @@ const HealthRecords = () => {
       <Box
         sx={({ palette }: any) => ({
           backgroundColor: palette.primary.main,
-          height: "90px",
+          height: "50px",
           display: "flex",
           alignItems: "center",
           mb: 2,

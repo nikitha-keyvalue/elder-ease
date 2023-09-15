@@ -47,7 +47,13 @@ const Navbar: React.FC = () => {
 
   const list = () => (
     <Box sx={{ width: 250 }} role="presentation">
-      <Box display={"flex"} alignItems={"center"} padding={"14px"}>
+      <Box
+        display={"flex"}
+        alignItems={"center"}
+        padding={"14px"}
+        sx={{ cursor: "pointer" }}
+        onClick={() => navigate("/elder-ease/health-records")}
+      >
         <FolderIcon sx={{ color: colors.primary.main }} />
         <Typography variant="h6" color="#000" marginLeft={"10px"}>
           My Documents
@@ -136,7 +142,7 @@ const Navbar: React.FC = () => {
             >
               <MenuItem
                 onClick={() => {
-                  navigate('/elder-ease/profile');
+                  navigate("/elder-ease/profile");
                 }}
               >
                 <Typography textAlign="center" fontSize={"16px"}>

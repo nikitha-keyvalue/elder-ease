@@ -4,18 +4,22 @@ import {
   Box,
   Button,
   Checkbox,
+  FormControl,
   FormControlLabel,
+  Grid,
+  InputLabel,
+  MenuItem,
   Radio,
   RadioGroup,
+  Select,
   TextField,
   Typography,
 } from "@mui/material";
 import Navbar from "./NavBar";
-import { useState } from "react";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import dayjs, { Dayjs } from 'dayjs';
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider, TimePicker } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { useState } from "react";
 
 const ServiceDetails: React.FC = () => {
   const defaultOptions = {
@@ -24,179 +28,200 @@ const ServiceDetails: React.FC = () => {
     animationData: animationData,
   };
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subscribe: false,
-  });
-
-  const [recurringFrequency, setRecurringFrequency] = useState("daily");
-  const [isRecurring, setRecurring] = useState(false);
-  const [value, setValue] = useState<Dayjs | null>(dayjs('2022-04-17'));
-
-  const handleChange = (event: any) => {
-    const { name, value, checked, type } = event.target;
-    const newValue = type === "checkbox" ? checked : value;
-
-    setFormData({
-      ...formData,
-      [name]: newValue,
-    });
-  };
-
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    // Process the form data, e.g., send it to an API
-    console.log(formData);
-  };
-
-  const handleCheckboxChange = (e: any) => {
-    setRecurringFrequency(e.target.value);
-  };
+  const [recurringEventValue, setRecurringEventValue] = useState(false);
 
   return (
     <>
       <Navbar />
       <Lottie
-        width={"75%"}
-        height={"90%"}
+        width={"200px"}
         options={defaultOptions}
         style={{ paddingTop: "18px" }}
       />
-      <Box padding={"45px"}>
-        <Typography variant="h4" gutterBottom textAlign={"center"}>
-          Title
+      <Box padding={"15px"}>
+        <Typography variant="h4" gutterBottom>
+          Reliable rides to checkups at hospitals
         </Typography>
         <Box>
           <Typography
-            variant="body1"
+            variant="subtitle1"
             gutterBottom
             textAlign={"justify"}
             fontSize={"16px"}
             lineHeight={1.25}
             marginBottom={"12px"}
+            sx={{ fontSize: "10px" }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-            blanditiis tenetur Lorem ipsum dolor sit amet Lorem ipsum dolor sit
-            amet, consectetur adipisicing elit.
+            Experience the reassurance of a dedicated buddy accompanying you
+            during hospital visits. We ensure you're never alone, supporting you
+            throughout the entire process, from the journey there to the journey
+            back home. Your comfort and care are our utmost priorities.
           </Typography>
-          {/* <Typography
-            variant="body1"
-            gutterBottom
-            textAlign={"justify"}
-            fontSize={"16px"}
-            lineHeight={1.25}
-          >
-            Quos blanditiis tenetur Lorem ipsum dolor sit amet Lorem ipsum dolor
-            sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-            Lorem ipsum dolor sit amet.
-          </Typography> */}
         </Box>
         {/* <Box display={'flex'} justifyContent={'center'}>
           <Typography variant="h4" sx={{ textDecoration: 'underline' }}>Add Details</Typography>
         </Box> */}
-        <form onSubmit={handleSubmit}>
-          <TextField
-            label="Name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            variant="outlined"
-            size="small"
-            sx={{
-              "& .MuiInputLabel-root": {
-                fontSize: "14px",
-                paddingTop: "4px",
-              },
-            }}
-          />
+        <Typography variant="h5" gutterBottom>
+          Enter Service Details
+        </Typography>
+        <TextField
+          InputLabelProps={{
+            style: {
+              fontSize: "14px",
+            },
+          }}
+          label="Hospital's Name"
+          variant="outlined"
+          fullWidth
+          size="small"
+          sx={{ mb: 1.5 }}
+        />
 
-          <TextField
-            label="Email"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            variant="outlined"
-            size="small"
-            sx={{
-              "& .MuiInputLabel-root": {
-                fontSize: "14px",
-                paddingTop: "4px",
-              },
-            }}
-          />
-        </form>
+        <TextField
+          InputLabelProps={{
+            style: {
+              fontSize: "14px",
+            },
+          }}
+          label="Doctor's Name"
+          variant="outlined"
+          fullWidth
+          size="small"
+          sx={{ mb: 1.5 }}
+        />
+        <Grid container display="flex" justifyContent="space-between" mb={1.5}>
+          <Grid item xs={6}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker label="Pickup Date" />
+            </LocalizationProvider>
+          </Grid>
+          <Grid item xs={5}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <TimePicker label="Pickup Time" />
+            </LocalizationProvider>
+          </Grid>
+        </Grid>
+        <TextField
+          InputLabelProps={{
+            style: {
+              fontSize: "14px",
+            },
+          }}
+          label="Pick Up Location"
+          variant="outlined"
+          fullWidth
+          size="small"
+          sx={{ mb: 1.5 }}
+        />
+        <FormControl fullWidth size="small">
+          <InputLabel id="demo-simple-select-label">
+            Buddy's gender preference
+          </InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            label="Age"
+          >
+            <MenuItem value={10}>Male</MenuItem>
+            <MenuItem value={20}>Female</MenuItem>
+          </Select>
+        </FormControl>
         <FormControlLabel
-          control={
-            <Checkbox
-              size="small"
-              onChange={(e) => {
-                setRecurring(e.target.checked);
-              }}
-            />
-          }
+          control={<Checkbox />}
           label={
-            <Typography variant="subtitle2" fontSize={13} lineHeight={1.2}>
-              Check this box if this is a recurring event
+            <Typography sx={{ fontSize: "14px" }}>
+              Need wheelchair assistance
             </Typography>
           }
         />
-        {isRecurring && (
-          <Box>
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={recurringEventValue}
+              onChange={(e) => setRecurringEventValue(e.target.checked)}
+            />
+          }
+          label={
+            <Typography sx={{ fontSize: "14px" }}>
+              Check if this is a recurring service
+            </Typography>
+          }
+        />
+        {recurringEventValue && (
+          <Grid container sx={{ display: "flex", justifyContent: "center" }}>
+            <FormControl sx={{ display: "block" }} size="small">
+              <RadioGroup
+                aria-labelledby="demo-radio-buttons-group-label"
+                defaultValue="daily"
+                name="radio-buttons-group"
+              >
+                <FormControlLabel
+                  value="daily"
+                  control={<Radio />}
+                  label={
+                    <Typography sx={{ fontSize: "12px" }}>Daily</Typography>
+                  }
+                />
+                <FormControlLabel
+                  value="weekly"
+                  control={<Radio />}
+                  label={
+                    <Typography sx={{ fontSize: "12px" }}>Weekly</Typography>
+                  }
+                />
+                <FormControlLabel
+                  value="monthly"
+                  control={<Radio />}
+                  label={
+                    <Typography sx={{ fontSize: "12px" }}>Monthly</Typography>
+                  }
+                />
+              </RadioGroup>
+            </FormControl>
+          </Grid>
+        )}
+        <Typography sx={{ fontSize: "14px" }}>
+          Preferred mode of transportation
+        </Typography>
+        <Grid container sx={{ display: "flex", justifyContent: "center" }}>
+          <FormControl sx={{ display: "block" }} size="small">
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="daily"
               name="radio-buttons-group"
-              onChange={handleCheckboxChange}
             >
               <FormControlLabel
-                control={<Radio color="primary" size="small" />}
-                label="Daily"
-                sx={{
-                  "& .MuiFormControlLabel-label": {
-                    fontSize: "15px",
-                  },
-                }}
                 value="daily"
+                control={<Radio />}
+                label={
+                  <Typography sx={{ fontSize: "12px" }}>
+                    I have a car drive me
+                  </Typography>
+                }
               />
               <FormControlLabel
-                control={<Radio color="primary" size="small" />}
-                label="Weekly"
-                sx={{
-                  "& .MuiFormControlLabel-label": {
-                    fontSize: "15px",
-                  },
-                }}
                 value="weekly"
+                control={<Radio />}
+                label={
+                  <Typography sx={{ fontSize: "12px" }}>
+                    Auto/Public Transport
+                  </Typography>
+                }
               />
               <FormControlLabel
-                control={<Radio color="primary" size="small" />}
-                label="Monthly"
-                sx={{
-                  "& .MuiFormControlLabel-label": {
-                    fontSize: "15px",
-                  },
-                }}
                 value="monthly"
+                control={<Radio />}
+                label={
+                  <Typography sx={{ fontSize: "12px" }}>
+                    Come pick me up with a vehicle
+                  </Typography>
+                }
               />
             </RadioGroup>
-          </Box>
-        )}
-        {isRecurring && recurringFrequency === "monthly" && (
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker
-                  label="Controlled picker"
-                  value={value}
-                  onChange={(newValue) => setValue(newValue)}
-                />
-            </LocalizationProvider>
-        
-        )}
-        <Box display={"flex"} flexDirection={"row-reverse"}>
+          </FormControl>
+        </Grid>
+        <Box display={"flex"} flexDirection={"row-reverse"} mt={2} gap="10px">
+          <Button variant="outlined">Cancel</Button>
           <Button variant="contained" sx={{ color: "#fff" }}>
             Book Now
           </Button>
