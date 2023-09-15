@@ -5,6 +5,8 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import HealthRecords from "./pages/HealthRecords/HealthRecords";
 import RegisterPage from "./pages/RegisterPage/Register";
+import ServiceDetails from "./pages/Home/components/ServiceDetails";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
           path={"/elder-ease/health-records"}
           element={<HealthRecords />}
         />
+        <Route path={"/elder-ease/home"} element={<Home />} />
+        <Route path={"/elder-ease/home/service-details"} element={<ServiceDetails />} />
         <Route path="*" element={<Navigate to="/elder-ease/register" />} />
       </Routes>
     </ThemeProvider>
