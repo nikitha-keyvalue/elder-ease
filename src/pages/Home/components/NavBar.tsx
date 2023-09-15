@@ -11,7 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { Divider, Drawer } from "@mui/material";
 import FolderIcon from "@mui/icons-material/Folder";
 import BookIcon from "@mui/icons-material/Book";
@@ -60,9 +59,14 @@ const Navbar: React.FC = () => {
         </Typography>
       </Box>
       <Divider />
-      <Box display={"flex"} alignItems={"center"} padding={"14px"} onClick={()=>{
-        navigate('/elder-ease/my-bookings')
-      }}>
+      <Box
+        display={"flex"}
+        alignItems={"center"}
+        padding={"14px"}
+        onClick={() => {
+          navigate("/elder-ease/my-bookings");
+        }}
+      >
         <BookIcon sx={{ color: colors.primary.main }} />
         <Typography variant="h6" color="#000" marginLeft={"10px"}>
           My Bookings
@@ -87,9 +91,6 @@ const Navbar: React.FC = () => {
               <MenuIcon />
             </IconButton>
           </Box>
-          <AdbIcon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1, color: "#fff" }}
-          />
           <Typography
             variant="h5"
             noWrap
@@ -106,7 +107,7 @@ const Navbar: React.FC = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            ELDER EASE
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

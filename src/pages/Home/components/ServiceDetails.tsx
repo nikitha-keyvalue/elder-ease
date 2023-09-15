@@ -20,6 +20,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider, TimePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ServiceDetails: React.FC = () => {
   const defaultOptions = {
@@ -30,6 +31,8 @@ const ServiceDetails: React.FC = () => {
 
   const [recurringEventValue, setRecurringEventValue] = useState(false);
 
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar />
@@ -38,7 +41,7 @@ const ServiceDetails: React.FC = () => {
         options={defaultOptions}
         style={{ paddingTop: "18px" }}
       />
-      <Box padding={"15px"}>
+      <Box padding={"18px"}>
         <Typography variant="h4" gutterBottom>
           Reliable rides to checkups at hospitals
         </Typography>
@@ -170,9 +173,10 @@ const ServiceDetails: React.FC = () => {
           }
         />
         {recurringEventValue && (
-          <Grid container sx={{ display: "flex", justifyContent: "center" }}>
+          <Grid container sx={{ display: "flex", ml: 3 }}>
             <FormControl sx={{ display: "block" }} size="small">
               <RadioGroup
+                row
                 aria-labelledby="demo-radio-buttons-group-label"
                 defaultValue="daily"
                 name="radio-buttons-group"
@@ -205,7 +209,7 @@ const ServiceDetails: React.FC = () => {
         <Typography sx={{ fontSize: "14px" }}>
           Preferred mode of transportation
         </Typography>
-        <Grid container sx={{ display: "flex", justifyContent: "center" }}>
+        <Grid container sx={{ display: "flex", ml: 3 }}>
           <FormControl sx={{ display: "block" }} size="small">
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
@@ -243,7 +247,12 @@ const ServiceDetails: React.FC = () => {
           </FormControl>
         </Grid>
         <Box display={"flex"} flexDirection={"row-reverse"} mt={2} gap="10px">
-          <Button variant="outlined">Cancel</Button>
+          <Button
+            variant="outlined"
+            onClick={() => navigate("/elder-ease/home")}
+          >
+            Cancel
+          </Button>
           <Button variant="contained" sx={{ color: "#fff" }}>
             Book Now
           </Button>
