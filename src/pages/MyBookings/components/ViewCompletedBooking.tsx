@@ -6,13 +6,20 @@ import {
   Card,
   CardContent,
   Divider,
+  TextField,
+  Button,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { useState } from "react";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import StarIcon from "@mui/icons-material/Star";
 
-const ViewBooking: React.FC = () => {
+const ViewCompletedBooking: React.FC = () => {
   const navigate = useNavigate();
+  const [rating, setRating] = useState([0, 0, 0, 0, 0]);
+  console.log({ rating });
   return (
     <>
       <Box padding={"16px"}>
@@ -25,7 +32,7 @@ const ViewBooking: React.FC = () => {
           alignItems={"center"}
         >
           <Typography variant="h3" sx={{ color: "#000" }}>
-            Booking #102356
+            Booking #102359
           </Typography>
           <IconButton sx={{ p: 0 }}>
             <Avatar alt="Remy Sharp" src="/user.png" />
@@ -54,14 +61,14 @@ const ViewBooking: React.FC = () => {
                   marginBottom: "13px",
                 }}
               >
-                Booking #102356
+                Booking #102359
               </div>
               <MoreHorizIcon sx={{ color: "#060c0c40" }} />
             </Box>
             <div style={{ fontWeight: 700 }}>
               <span>Status:</span>
-              <span style={{ color: "#25a12a", marginLeft: "8px" }}>
-                Started
+              <span style={{ color: "rgb(90 80 92 / 52%)", marginLeft: "8px" }}>
+                Completed
               </span>
             </div>
             <Typography variant="subtitle2" fontSize={"12px"} marginTop={"2px"}>
@@ -218,17 +225,80 @@ const ViewBooking: React.FC = () => {
             </Box>
             <Divider sx={{ marginY: "18px" }} />
             <span
-              style={{ color: "#db8149bd", marginLeft: "8px", fontWeight: 700 }}
+              style={{ color: "#25a12a", marginLeft: "8px", fontWeight: 700 }}
             >
-              Estimated Amount: ₹500
+              Paid: ₹450.00
             </span>
+            <Divider sx={{ marginY: "18px" }} />
             <Typography
-              variant="h6"
-              sx={{ color: "#000", marginLeft: "9px", marginTop: "8px", fontWeight: 100 }}
+              sx={{ fontSize: "17px", fontWeight: 700, marginBottom: "8px" }}
             >
-              *Note that this amount is only applicable for the first four
-              hours. An extra ₹50 will be charged for every extra hour.
+              Submit feedback for your Buddy
             </Typography>
+            <Box position={"relative"} right={"8px"}>
+              <Box display={"flex"} alignItems={"center"}>
+                <IconButton sx={{ p: 0 }}>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src="/buddy.jpg"
+                    sx={{ width: "52px" }}
+                  />
+                </IconButton>
+                <Typography variant="h6" sx={{ color: "#000" }}>
+                  Anika Patel
+                </Typography>
+              </Box>
+              <Box marginLeft={"7px"}>
+                {rating.map((r, i) => (
+                  <>
+                    {r === 0 ? (
+                      <StarBorderIcon
+                        key={i}
+                        onClick={() => {
+                          let arr: number[] = [0, 0, 0, 0, 0];
+                          arr.fill(1, 0, i + 1);
+                          console.log(arr);
+                          setRating(arr);
+                        }}
+                        sx={{ color: "#e6bb67", width: "18px" }}
+                      />
+                    ) : (
+                      <StarIcon
+                        key={i}
+                        onClick={() => {
+                          let arr: number[] = [0, 0, 0, 0, 0];
+                          arr.fill(1, 0, i + 1);
+                          setRating(arr);
+                        }}
+                        sx={{ color: "#e6bb67", width: "18px" }}
+                      />
+                    )}
+                  </>
+                ))}
+              </Box>
+              <TextField
+                id="outlined-multiline-static"
+                label="Type your feedback here..."
+                multiline
+                rows={4}
+                InputLabelProps={{
+                  style: {
+                    fontSize: "14px",
+                  },
+                }}
+                size="small"
+                sx={{
+                  width: "100%",
+                  "& .MuiInputBase-input": { fontSize: "14px" },
+                }}
+              />
+              <Button
+                variant="contained"
+                style={{ marginTop: "10px", fontWeight: 600 }}
+              >
+                Submit
+              </Button>
+            </Box>
           </CardContent>
         </Card>
       </Box>
@@ -236,4 +306,4 @@ const ViewBooking: React.FC = () => {
   );
 };
 
-export default ViewBooking;
+export default ViewCompletedBooking;

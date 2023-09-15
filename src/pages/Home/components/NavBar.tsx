@@ -91,7 +91,14 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <AppBar position="sticky" sx={{ top: 0 }}>
+    <AppBar
+      position="sticky"
+      sx={{
+        top: 0,
+        backgroundColor: "#fff",
+        boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -101,7 +108,7 @@ const Navbar: React.FC = () => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              style={{ color: "#fff" }}
+              style={{ color: "#000" }}
             >
               <MenuIcon />
             </IconButton>
@@ -117,11 +124,11 @@ const Navbar: React.FC = () => {
               flexGrow: 1,
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "#fff",
+              color: "#000",
               textDecoration: "none",
             }}
           >
-            ELDER EASE
+            {/* ELDER EASE */}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
