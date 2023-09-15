@@ -174,7 +174,7 @@ const ServiceDetails: React.FC = () => {
           }
         />
         {recurringEventValue && (
-          <Grid container sx={{ display: "flex", ml: 3 }}>
+          <Grid container sx={{ display: "flex", ml: 3, mt: "-10px" }}>
             <FormControl sx={{ display: "block" }} size="small">
               <RadioGroup
                 row
