@@ -8,6 +8,11 @@ import {
   Divider,
   TextField,
   Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from "@mui/material";
 
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -17,7 +22,18 @@ import StarIcon from "@mui/icons-material/Star";
 
 const ViewCompletedBooking: React.FC = () => {
   const [rating, setRating] = useState([0, 0, 0, 0, 0]);
-  console.log({ rating });
+  const [review, setReview] = useState("");
+  const [submit, setSubmit] = useState(false);
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <>
       <Box
@@ -270,28 +286,46 @@ const ViewCompletedBooking: React.FC = () => {
                   </>
                 ))}
               </Box>
-              <TextField
-                id="outlined-multiline-static"
-                label="Type your feedback here..."
-                multiline
-                rows={4}
-                InputLabelProps={{
-                  style: {
-                    fontSize: "14px",
-                  },
-                }}
-                size="small"
-                sx={{
-                  width: "100%",
-                  "& .MuiInputBase-input": { fontSize: "14px" },
-                }}
-              />
-              <Button
-                variant="contained"
-                style={{ marginTop: "10px", fontWeight: 600 }}
-              >
-                Submit
-              </Button>
+              {!submit ? (
+                <TextField
+                  id="outlined-multiline-static"
+                  label="Type your feedback here..."
+                  multiline
+                  rows={4}
+                  InputLabelProps={{
+                    style: {
+                      fontSize: "14px",
+                    },
+                  }}
+                  size="small"
+                  sx={{
+                    width: "100%",
+                    "& .MuiInputBase-input": { fontSize: "14px" },
+                  }}
+                  value={review}
+                  onChange={(e) => {
+                    setReview(e.target.value);
+                  }}
+                />
+              ) : (
+                <>
+                  <Typography sx={{ fontSize: "12px", marginLeft: "10px" }}>
+                    {review}
+                  </Typography>
+                </>
+              )}
+              {!submit && (
+                <Button
+                  variant="contained"
+                  style={{ marginTop: "10px", fontWeight: 600 }}
+                  onClick={() => {
+                    setSubmit(true);
+                    handleClickOpen();
+                  }}
+                >
+                  Submit
+                </Button>
+              )}
             </Box>
           </CardContent>
         </Card>
