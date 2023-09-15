@@ -66,6 +66,7 @@ const Map: FC<Props> = ({
           variant="outlined"
           size="small"
           onChange={(e) => setZipcode(Number(e.target.value))}
+          sx={{ "& .MuiInputBase-input": { fontSize: "14px" } }}
         />
         <Button
           variant="contained"

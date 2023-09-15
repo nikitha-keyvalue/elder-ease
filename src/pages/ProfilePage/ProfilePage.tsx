@@ -38,7 +38,6 @@ const ProfilePage = () => {
     landmark: "",
     client_relationship: "",
     address: "",
-    pincode: "682030",
   });
 
   const navigate = useNavigate();
@@ -59,7 +58,7 @@ const ProfilePage = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...formData }),
+          body: JSON.stringify({ ...formData, age: Number(formData.age) }),
         });
 
         if (response.status === 200) {
