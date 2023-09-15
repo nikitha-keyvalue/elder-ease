@@ -48,7 +48,7 @@ const SearchBar = ({
       style={{
         marginTop: "20px",
         width: width ?? "90%",
-        marginLeft: marginLeft ?? "calc(100vw - 100%)",
+        marginLeft: marginLeft ?? "calc(100vw - 95%)",
       }}
     >
       <Search>

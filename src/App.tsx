@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 
 import './App.css'
 import MyBookings from "./pages/MyBookings";
+import ViewBooking from "./pages/MyBookings/components/ViewBooking";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path={"/elder-ease/home"} element={<Home />} />
         <Route path={"/elder-ease/home/service-details"} element={<ServiceDetails />} />
         <Route path={"/elder-ease/my-bookings"} element={<MyBookings />} />
+        <Route path={"/elder-ease/view-booking"} element={<ViewBooking />} />
         <Route path="*" element={<Navigate to="/elder-ease/register" />} />
       </Routes>
     </ThemeProvider>

@@ -5,15 +5,15 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { useNavigate } from "react-router-dom";
 
 const MyBookings: React.FC = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       {/* <Navbar /> */}
       <Box padding={"16px"}>
         <Box onClick={() => navigate(-1)}>
-          <ArrowBackIosNewIcon sx={{ marginBottom: "12px", color: "#000" }} />
+          <ArrowBackIosNewIcon sx={{ marginBottom: "8px", color: "#000" }} />
         </Box>
-        <Box display={"flex"} justifyContent={"space-between"}>
+        <Box display={"flex"} justifyContent={"space-between"} alignItems={'center'}>
           <Typography variant="h3" sx={{ color: "#000" }}>
             My Bookings
           </Typography>

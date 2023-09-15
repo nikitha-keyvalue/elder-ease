@@ -4,8 +4,10 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import TimeToLeaveIcon from "@mui/icons-material/TimeToLeave";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useNavigate } from "react-router-dom";
 
 const BookingsCard: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Box>
@@ -16,6 +18,9 @@ const BookingsCard: React.FC = () => {
             boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)",
             border: 0,
             borderRadius: "3px",
+          }}
+          onClick={()=>{
+            navigate('/elder-ease/view-booking')
           }}
         >
           <CardContent>
@@ -376,7 +381,7 @@ const BookingsCard: React.FC = () => {
               <Box
                 sx={{
                   padding: "11px",
-                  backgroundColor: "#4b5cf238",
+                  backgroundColor: "#4589f533",
                   textAlign: "center",
                   borderRadius: "14px",
                   marginTop: "20px",
@@ -385,7 +390,7 @@ const BookingsCard: React.FC = () => {
                 <Typography
                   variant="h3"
                   fontSize={"16px"}
-                  sx={{ color: "#4b5cf2" }}
+                  sx={{ color: "#4287f5" }}
                 >
                   Requested
                 </Typography>
