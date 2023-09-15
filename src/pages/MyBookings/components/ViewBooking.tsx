@@ -11,8 +11,21 @@ import { useNavigate } from "react-router-dom";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
+import Map from "../../Maps/Map";
+
 const ViewBooking: React.FC = () => {
   const navigate = useNavigate();
+
+  const userLocation = {
+    lat: 13.031812,
+    lng: 77.4793,
+  };
+
+  const destinationLocation = {
+    lat: 12.90954,
+    lng: 77.64878,
+  };
+
   return (
     <>
       <Box padding={"16px"}>
@@ -231,6 +244,11 @@ const ViewBooking: React.FC = () => {
             </Typography>
           </CardContent>
         </Card>
+        <Map
+          userLocation={userLocation}
+          destinationLocation={destinationLocation}
+          isTracking
+        />
       </Box>
     </>
   );
