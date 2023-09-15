@@ -74,7 +74,7 @@ const ServiceDetails: React.FC = () => {
           variant="outlined"
           fullWidth
           size="small"
-          sx={{ mb: 1.5 }}
+          sx={{ mb: 1.5, "& .MuiInputBase-input": { fontSize: "14px" } }}
         />
 
         <TextField
@@ -87,17 +87,29 @@ const ServiceDetails: React.FC = () => {
           variant="outlined"
           fullWidth
           size="small"
-          sx={{ mb: 1.5 }}
+          sx={{ mb: 1.5, "& .MuiInputBase-input": { fontSize: "14px" } }}
         />
         <Grid container display="flex" justifyContent="space-between" mb={1.5}>
           <Grid item xs={6}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DatePicker label="Pickup Date" />
+              <DatePicker
+                label="Pickup Date"
+                sx={{
+                  "& .MuiInputBase-input": { fontSize: "14px" },
+                  "& .MuiInputLabel-root": { fontSize: "14px" },
+                }}
+              />
             </LocalizationProvider>
           </Grid>
           <Grid item xs={5}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <TimePicker label="Pickup Time" />
+              <TimePicker
+                label="Pickup Time"
+                sx={{
+                  "& .MuiInputBase-input": { fontSize: "14px" },
+                  "& .MuiInputLabel-root": { fontSize: "14px" },
+                }}
+              />
             </LocalizationProvider>
           </Grid>
         </Grid>
@@ -111,19 +123,29 @@ const ServiceDetails: React.FC = () => {
           variant="outlined"
           fullWidth
           size="small"
-          sx={{ mb: 1.5 }}
+          sx={{ mb: 1.5, "& .MuiInputBase-input": { fontSize: "14px" } }}
         />
         <FormControl fullWidth size="small">
-          <InputLabel id="demo-simple-select-label">
-            Buddy's gender preference
+          <InputLabel
+            id="demo-simple-select-label"
+            sx={{
+              fontSize: "14px",
+            }}
+          >
+            Buddy gender preference
           </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            label="Age"
+            label={"Buddy gender preference"}
+            sx={{ "& .MuiInputBase-input": { fontSize: "14px" } }}
           >
-            <MenuItem value={10}>Male</MenuItem>
-            <MenuItem value={20}>Female</MenuItem>
+            <MenuItem value={10} sx={{ fontSize: "15px" }}>
+              Male
+            </MenuItem>
+            <MenuItem value={20} sx={{ fontSize: "15px" }}>
+              Female
+            </MenuItem>
           </Select>
         </FormControl>
         <FormControlLabel
@@ -157,21 +179,21 @@ const ServiceDetails: React.FC = () => {
               >
                 <FormControlLabel
                   value="daily"
-                  control={<Radio />}
+                  control={<Radio size="small" />}
                   label={
                     <Typography sx={{ fontSize: "12px" }}>Daily</Typography>
                   }
                 />
                 <FormControlLabel
                   value="weekly"
-                  control={<Radio />}
+                  control={<Radio size="small" />}
                   label={
                     <Typography sx={{ fontSize: "12px" }}>Weekly</Typography>
                   }
                 />
                 <FormControlLabel
                   value="monthly"
-                  control={<Radio />}
+                  control={<Radio size="small" />}
                   label={
                     <Typography sx={{ fontSize: "12px" }}>Monthly</Typography>
                   }
@@ -192,16 +214,16 @@ const ServiceDetails: React.FC = () => {
             >
               <FormControlLabel
                 value="daily"
-                control={<Radio />}
+                control={<Radio size="small" />}
                 label={
                   <Typography sx={{ fontSize: "12px" }}>
-                    I have a car drive me
+                    I have a car, drive me
                   </Typography>
                 }
               />
               <FormControlLabel
                 value="weekly"
-                control={<Radio />}
+                control={<Radio size="small" />}
                 label={
                   <Typography sx={{ fontSize: "12px" }}>
                     Auto/Public Transport
@@ -210,7 +232,7 @@ const ServiceDetails: React.FC = () => {
               />
               <FormControlLabel
                 value="monthly"
-                control={<Radio />}
+                control={<Radio size="small" />}
                 label={
                   <Typography sx={{ fontSize: "12px" }}>
                     Come pick me up with a vehicle
