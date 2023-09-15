@@ -72,6 +72,7 @@ const Map: FC<Props> = ({
               variant="outlined"
               size="small"
               onChange={(e) => setZipcode(Number(e.target.value))}
+              sx={{ "& .MuiInputBase-input": { fontSize: "14px" } }}
             />
             <Button
               variant="contained"
@@ -169,7 +170,7 @@ const Map: FC<Props> = ({
                 )}
                 {isLoaded && (
                   <MarkerF
-                    position={{ lat: 13.01, lng: 77.55 }}
+                    position={{ lat: 9.969065, lng: 76.356517 }}
                     icon={{
                       url: "https://maps.gstatic.com/intl/en_us/mapfiles/markers2/measle_blue.png",
                       scaledSize: new window.google.maps.Size(10, 10),

@@ -121,7 +121,7 @@ export default function ServiceCard() {
                         variant="outlined"
                         sx={{ width: "57%", fontSize: "12px" }}
                         onClick={() => {
-                          navigate("/elder-ease/home/service-details");
+                          navigate("/elder-buddy/home/service-details");
                         }}
                       >
                         Book now

@@ -6,7 +6,7 @@ import animationData from "../../animations/signing-contract.json";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = "http://127.0.0.1:5000/api";
+const BASE_URL = "https://70b6-103-181-238-106.ngrok-free.app/api";
 
 const RegisterPage = () => {
   const defaultOptions = {
@@ -38,7 +38,7 @@ const RegisterPage = () => {
         });
 
         if (response) {
-          navigate("/elder-ease/profile");
+          navigate("/elder-buddy/profile");
         }
       } catch (error) {
         console.error("Error:", error);
@@ -64,7 +64,7 @@ const RegisterPage = () => {
       <>
         {/* <img src="./logo.png" alt="logo" /> */}
         <Typography variant="h1" fontFamily="cursive">
-          Elder Ease
+          Elder Buddy
         </Typography>
 
         <Lottie width={200} height={200} options={defaultOptions} />

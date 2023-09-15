@@ -25,7 +25,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Map from "../../Maps/Map";
 
-const BASE_URL = "http://127.0.0.1:5000/api";
+const BASE_URL = "https://70b6-103-181-238-106.ngrok-free.app/api";
 
 const ServiceDetails: React.FC = () => {
   const defaultOptions = {
@@ -105,7 +105,6 @@ const ServiceDetails: React.FC = () => {
         });
 
         if (response.status === 200) {
-          navigate("/elder-ease/home");
         }
       } catch (error) {
         console.error("Error:", error);
@@ -378,7 +377,7 @@ const ServiceDetails: React.FC = () => {
         <Box display={"flex"} flexDirection={"row-reverse"} mt={2} gap="10px">
           <Button
             variant="outlined"
-            onClick={() => navigate("/elder-ease/home")}
+            onClick={() => navigate("/elder-buddy/home")}
           >
             Cancel
           </Button>

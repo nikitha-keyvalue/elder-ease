@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
         alignItems={"center"}
         padding={"14px"}
         sx={{ cursor: "pointer" }}
-        onClick={() => navigate("/elder-ease/health-records")}
+        onClick={() => navigate("/elder-buddy/health-records")}
       >
         <FolderIcon sx={{ color: colors.primary.main }} />
         <Typography variant="h6" color="#000" marginLeft={"10px"}>
@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
         alignItems={"center"}
         padding={"14px"}
         onClick={() => {
-          navigate("/elder-ease/my-bookings");
+          navigate("/elder-buddy/my-bookings");
         }}
       >
         <BookIcon sx={{ color: colors.primary.main }} />
@@ -168,7 +168,7 @@ const Navbar: React.FC = () => {
             >
               <MenuItem
                 onClick={() => {
-                  navigate("/elder-ease/profile");
+                  navigate("/elder-buddy/profile");
                 }}
               >
                 <Typography textAlign="center" fontSize={"16px"}>

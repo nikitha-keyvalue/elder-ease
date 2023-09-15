@@ -6,13 +6,13 @@ import Map from "../../Maps/Map";
 
 const ViewBooking: React.FC = () => {
   const userLocation = {
-    lat: 13.031812,
-    lng: 77.4793,
+    lat: 10.010683,
+    lng: 76.347663,
   };
 
   const destinationLocation = {
-    lat: 12.90954,
-    lng: 77.64878,
+    lat: 9.918982,
+    lng: 76.318982,
   };
 
   return (
@@ -63,7 +63,7 @@ const ViewBooking: React.FC = () => {
               </span>
             </div>
             <Typography variant="subtitle2" fontSize={"12px"} marginTop={"2px"}>
-              Date: 15/09/2023
+              Date: 18/09/2023
             </Typography>
             <Divider sx={{ marginTop: "18px" }} />
             <Box sx={{ marginTop: "16px" }}>
@@ -75,7 +75,7 @@ const ViewBooking: React.FC = () => {
                 fontWeight={600}
                 sx={{ color: "rgb(0 0 0 / 33%)" }}
               >
-                Riverside Wellness Institute
+                Lakeshore hospital
               </Typography>
             </Box>
             <Box sx={{ marginTop: "16px" }}>
@@ -87,8 +87,7 @@ const ViewBooking: React.FC = () => {
                 fontWeight={600}
                 sx={{ color: "rgb(0 0 0 / 33%)" }}
               >
-                789 Sunshine Avenue Greenwood Lane Extension Bengaluru,
-                Karnataka 560123 India
+                Lakeshore hospital,NH 66,Nettoor,Maradu,Kochi 682040
               </Typography>
             </Box>
             <Box sx={{ marginTop: "16px" }}>
@@ -100,8 +99,7 @@ const ViewBooking: React.FC = () => {
                 fontWeight={600}
                 sx={{ color: "rgb(0 0 0 / 33%)" }}
               >
-                567 Serenity Boulevard Royal Oak Street, Golden Valley
-                Bangalore, 411456 India
+                DLF New Town Heights,Kakkanad P.O,Kochi,Ernakulam
               </Typography>
             </Box>
             <Box sx={{ marginTop: "16px" }}>
@@ -113,7 +111,7 @@ const ViewBooking: React.FC = () => {
                 fontWeight={600}
                 sx={{ color: "rgb(0 0 0 / 33%)" }}
               >
-                16/09/2023
+                18/09/2023
               </Typography>
             </Box>
             <Box sx={{ marginTop: "16px" }}>
@@ -125,7 +123,7 @@ const ViewBooking: React.FC = () => {
                 fontWeight={600}
                 sx={{ color: "rgb(0 0 0 / 33%)" }}
               >
-                5:30 PM
+                10:30 AM
               </Typography>
             </Box>
             <Divider sx={{ marginTop: "18px" }} />
@@ -138,7 +136,7 @@ const ViewBooking: React.FC = () => {
                 fontWeight={600}
                 sx={{ color: "rgb(0 0 0 / 33%)" }}
               >
-                No
+                Yes
               </Typography>
             </Box>
             <Box sx={{ marginTop: "16px" }}>

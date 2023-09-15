@@ -20,7 +20,7 @@ const BookingsCard: React.FC = () => {
             borderRadius: "3px",
           }}
           onClick={() => {
-            navigate("/elder-ease/view-booking/1");
+            navigate("/elder-buddy/view-booking/1");
           }}
         >
           <CardContent>
@@ -407,7 +407,7 @@ const BookingsCard: React.FC = () => {
             marginTop: "30px",
           }}
           onClick={() => {
-            navigate("/elder-ease/view-booking/2");
+            navigate("/elder-buddy/view-booking/2");
           }}
         >
           <CardContent>

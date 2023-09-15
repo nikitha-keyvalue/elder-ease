@@ -17,7 +17,7 @@ import { useState } from "react";
 import Map from "../Maps/Map";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = "http://127.0.0.1:5000/api";
+const BASE_URL = "https://70b6-103-181-238-106.ngrok-free.app/api";
 
 const ProfilePage = () => {
   const [addNewMember, setAddNewMember] = useState(false);
@@ -61,7 +61,7 @@ const ProfilePage = () => {
       });
 
       if (response) {
-        navigate("/elder-ease/home");
+        navigate("/elder-buddy/home");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -135,7 +135,12 @@ const ProfilePage = () => {
             }}
           >
             <AddIcon />
-            <Typography sx={{ fontSize: "15px", textTransform: "capitalize" }}>
+            <Typography
+              sx={{
+                fontSize: "15px",
+                textTransform: "capitalize",
+              }}
+            >
               Add Elder
             </Typography>
           </Button>

@@ -17,18 +17,18 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        <Route path={"/elder-ease/register"} element={<RegisterPage />} />
-        <Route path={"/elder-ease/profile"} element={<ProfilePage />} />
+        <Route path={"/elder-buddy/register"} element={<RegisterPage />} />
+        <Route path={"/elder-buddy/profile"} element={<ProfilePage />} />
         <Route
-          path={"/elder-ease/health-records"}
+          path={"/elder-buddy/health-records"}
           element={<HealthRecords />}
         />
-        <Route path={"/elder-ease/home"} element={<Home />} />
-        <Route path={"/elder-ease/home/service-details"} element={<ServiceDetails />} />
-        <Route path={"/elder-ease/my-bookings"} element={<MyBookings />} />
-        <Route path={"/elder-ease/view-booking/1"} element={<ViewBooking />} />
-        <Route path={"/elder-ease/view-booking/2"} element={<ViewCompletedBooking />} />
-        <Route path="*" element={<Navigate to="/elder-ease/register" />} />
+        <Route path={"/elder-buddy/home"} element={<Home />} />
+        <Route path={"/elder-buddy/home/service-details"} element={<ServiceDetails />} />
+        <Route path={"/elder-buddy/my-bookings"} element={<MyBookings />} />
+        <Route path={"/elder-buddy/view-booking/1"} element={<ViewBooking />} />
+        <Route path={"/elder-buddy/view-booking/2"} element={<ViewCompletedBooking />} />
+        <Route path="*" element={<Navigate to="/elder-buddy/register" />} />
       </Routes>
     </ThemeProvider>
   );
