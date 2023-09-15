@@ -12,7 +12,7 @@ const Search = styled("div")(({ theme }) => ({
     marginLeft: theme.spacing(1),
     width: "auto",
   },
-  boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.1)",
+  boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)",
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -36,13 +36,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const SearchBar = ({ marginLeft, width }: { marginLeft?: string | number, width?: any }) => {
+const SearchBar = ({
+  marginLeft,
+  width,
+}: {
+  marginLeft?: string | number;
+  width?: any;
+}) => {
   return (
     <div
       style={{
         marginTop: "20px",
         width: width ?? "90%",
-        marginLeft: marginLeft ?? "calc(100vw - 95%)",
+        marginLeft: marginLeft ?? "calc(100vw - 100%)",
       }}
     >
       <Search>

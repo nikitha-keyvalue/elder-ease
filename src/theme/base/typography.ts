@@ -3,7 +3,7 @@ import colors from "./colors";
 const { primary } = colors;
 
 const baseProperties = {
-  fontFamily: '"Open Sans", sans-serif',
+  fontFamily: 'Mona Sans, sans-serif',
   fontWeightLighter: 100,
   fontWeightLight: 300,
   fontWeightRegular: 400,
