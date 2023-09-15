@@ -19,8 +19,8 @@ const BookingsCard: React.FC = () => {
             border: 0,
             borderRadius: "3px",
           }}
-          onClick={()=>{
-            navigate('/elder-ease/view-booking')
+          onClick={() => {
+            navigate("/elder-ease/view-booking/1");
           }}
         >
           <CardContent>
@@ -64,7 +64,7 @@ const BookingsCard: React.FC = () => {
                   variant="h5"
                   sx={{
                     fontSize: "14px",
-                    marginRight: "50px",
+                    marginRight: "59px",
                     color: "#0000005c",
                   }}
                 >
@@ -85,7 +85,7 @@ const BookingsCard: React.FC = () => {
                   variant="h5"
                   sx={{
                     fontSize: "14px",
-                    marginRight: "34px",
+                    marginRight: "43px",
                     color: "#0000005c",
                   }}
                 >
@@ -110,7 +110,7 @@ const BookingsCard: React.FC = () => {
                     color: "#0000005c",
                   }}
                 >
-                  Booking date:
+                  Estimated amt:
                 </Typography>
                 <Typography
                   variant="h5"
@@ -119,7 +119,7 @@ const BookingsCard: React.FC = () => {
                     color: "#00000085",
                   }}
                 >
-                  15/09/2023
+                  ₹500
                 </Typography>
               </Box>
               <Box
@@ -192,7 +192,7 @@ const BookingsCard: React.FC = () => {
                   variant="h5"
                   sx={{
                     fontSize: "14px",
-                    marginRight: "50px",
+                    marginRight: "59px",
                     color: "#0000005c",
                   }}
                 >
@@ -205,7 +205,7 @@ const BookingsCard: React.FC = () => {
                     color: "#00000085",
                   }}
                 >
-                  #102356
+                  #102357
                 </Typography>
               </Box>
               <Box display={"flex"} marginBottom={"3px"}>
@@ -213,7 +213,7 @@ const BookingsCard: React.FC = () => {
                   variant="h5"
                   sx={{
                     fontSize: "14px",
-                    marginRight: "34px",
+                    marginRight: "43px",
                     color: "#0000005c",
                   }}
                 >
@@ -238,7 +238,7 @@ const BookingsCard: React.FC = () => {
                     color: "#0000005c",
                   }}
                 >
-                  Booking date:
+                  Estimated amt:
                 </Typography>
                 <Typography
                   variant="h5"
@@ -247,7 +247,7 @@ const BookingsCard: React.FC = () => {
                     color: "#00000085",
                   }}
                 >
-                  15/09/2023
+                  ₹100
                 </Typography>
               </Box>
               <Box
@@ -320,7 +320,7 @@ const BookingsCard: React.FC = () => {
                   variant="h5"
                   sx={{
                     fontSize: "14px",
-                    marginRight: "50px",
+                    marginRight: "59px",
                     color: "#0000005c",
                   }}
                 >
@@ -333,7 +333,7 @@ const BookingsCard: React.FC = () => {
                     color: "#00000085",
                   }}
                 >
-                  #102356
+                  #102358
                 </Typography>
               </Box>
               <Box display={"flex"} marginBottom={"3px"}>
@@ -341,7 +341,7 @@ const BookingsCard: React.FC = () => {
                   variant="h5"
                   sx={{
                     fontSize: "14px",
-                    marginRight: "34px",
+                    marginRight: "43px",
                     color: "#0000005c",
                   }}
                 >
@@ -366,7 +366,7 @@ const BookingsCard: React.FC = () => {
                     color: "#0000005c",
                   }}
                 >
-                  Booking date:
+                  Estimated amt:
                 </Typography>
                 <Typography
                   variant="h5"
@@ -375,7 +375,7 @@ const BookingsCard: React.FC = () => {
                     color: "#00000085",
                   }}
                 >
-                  15/09/2023
+                  ₹200
                 </Typography>
               </Box>
               <Box
@@ -405,6 +405,9 @@ const BookingsCard: React.FC = () => {
             border: 0,
             borderRadius: "3px",
             marginTop: "30px",
+          }}
+          onClick={() => {
+            navigate("/elder-ease/view-booking/2");
           }}
         >
           <CardContent>
@@ -448,7 +451,7 @@ const BookingsCard: React.FC = () => {
                   variant="h5"
                   sx={{
                     fontSize: "14px",
-                    marginRight: "50px",
+                    marginRight: "59px",
                     color: "#0000005c",
                   }}
                 >
@@ -461,7 +464,7 @@ const BookingsCard: React.FC = () => {
                     color: "#00000085",
                   }}
                 >
-                  #102356
+                  #102359
                 </Typography>
               </Box>
               <Box display={"flex"} marginBottom={"3px"}>
@@ -469,7 +472,7 @@ const BookingsCard: React.FC = () => {
                   variant="h5"
                   sx={{
                     fontSize: "14px",
-                    marginRight: "34px",
+                    marginRight: "43px",
                     color: "#0000005c",
                   }}
                 >
@@ -494,7 +497,7 @@ const BookingsCard: React.FC = () => {
                     color: "#0000005c",
                   }}
                 >
-                  Booking date:
+                  Estimated amt:
                 </Typography>
                 <Typography
                   variant="h5"
@@ -503,7 +506,7 @@ const BookingsCard: React.FC = () => {
                     color: "#00000085",
                   }}
                 >
-                  15/09/2023
+                  ₹450
                 </Typography>
               </Box>
               <Box
