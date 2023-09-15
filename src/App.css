@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.css-f0w6tf-MuiInputBase-root-MuiOutlinedInput-root{
+  font-size: 12px !important;
+}

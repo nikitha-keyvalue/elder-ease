@@ -8,6 +8,9 @@ import RegisterPage from "./pages/RegisterPage/Register";
 import ServiceDetails from "./pages/Home/components/ServiceDetails";
 import Home from "./pages/Home";
 
+import './App.css'
+import MyBookings from "./pages/MyBookings";
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -20,6 +23,7 @@ const App = () => {
         />
         <Route path={"/elder-ease/home"} element={<Home />} />
         <Route path={"/elder-ease/home/service-details"} element={<ServiceDetails />} />
+        <Route path={"/elder-ease/my-bookings"} element={<MyBookings />} />
         <Route path="*" element={<Navigate to="/elder-ease/register" />} />
       </Routes>
     </ThemeProvider>
