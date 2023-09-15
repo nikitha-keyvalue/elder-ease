@@ -53,6 +53,7 @@ const RegisterPage = () => {
                 fontSize: "14px",
               },
             }}
+            type="password"
             label="Password"
             variant="outlined"
             fullWidth
@@ -64,6 +65,7 @@ const RegisterPage = () => {
                 fontSize: "14px",
               },
             }}
+            type="password"
             label="Confirm password"
             variant="outlined"
             fullWidth

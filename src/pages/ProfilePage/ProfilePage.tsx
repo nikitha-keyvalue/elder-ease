@@ -10,8 +10,15 @@ import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useState } from "react";
 
+import Map from "../Maps/Map";
+
 const ProfilePage = () => {
   const [addNewMember, setAddNewMember] = useState(false);
+
+  const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral>({
+    lat: 28.6139,
+    lng: 77.2090,
+  });
 
   return (
     <Box mb={2}>
@@ -165,6 +172,12 @@ const ProfilePage = () => {
               variant="outlined"
               fullWidth
               size="small"
+            />
+          </Grid>
+          <Grid item>
+            <Map
+              userLocation={userLocation}
+              setUserLocation={setUserLocation}
             />
           </Grid>
           <Grid item>
