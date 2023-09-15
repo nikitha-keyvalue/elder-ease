@@ -72,6 +72,21 @@ const Navbar: React.FC = () => {
           My Bookings
         </Typography>
       </Box>
+      <Divider />
+      <Box
+        display={"flex"}
+        alignItems={"center"}
+        padding={"14px"}
+        onClick={() => {
+          navigate("/elder-ease/my-bookings");
+        }}
+      >
+        <BookIcon sx={{ color: colors.primary.main }} />
+        <Typography variant="h6" color="#000" marginLeft={"10px"}>
+          Logout
+        </Typography>
+      </Box>
+      <Divider />
     </Box>
   );
 
