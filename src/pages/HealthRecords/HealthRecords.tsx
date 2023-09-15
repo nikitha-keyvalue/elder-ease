@@ -30,7 +30,7 @@ const HealthRecords = () => {
           boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)",
         })}
       >
-        <Typography variant="h3" sx={{ ml: 2, color: "#00A699" }}>
+        <Typography variant="h3" sx={{ ml: 2, color: "rgb(7,55,99)" }}>
           Health Records
         </Typography>
       </Box>
@@ -38,10 +38,10 @@ const HealthRecords = () => {
         return (
           <>
             <ListItem
-              secondaryAction={<DeleteIcon sx={{ color: "#00A699" }} />}
+              secondaryAction={<DeleteIcon sx={{ color: "rgb(7,55,99)" }} />}
             >
               <ListItemIcon>
-                <FileCopyIcon sx={{ color: "#00A699" }} />
+                <FileCopyIcon sx={{ color: "rgb(7,55,99)" }} />
               </ListItemIcon>
               <ListItemText>
                 <Typography variant="body2">{record}</Typography>

@@ -37,7 +37,7 @@ const RegisterPage = () => {
           }),
         });
 
-        if (response.status === 200) {
+        if (response) {
           navigate("/elder-ease/profile");
         }
       } catch (error) {
@@ -62,7 +62,10 @@ const RegisterPage = () => {
       })}
     >
       <>
-        <Typography variant="h5">Elder Ease</Typography>
+        {/* <img src="./logo.png" alt="logo" /> */}
+        <Typography variant="h1" fontFamily="cursive">
+          Elder Ease
+        </Typography>
 
         <Lottie width={200} height={200} options={defaultOptions} />
 

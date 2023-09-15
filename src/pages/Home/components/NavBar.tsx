@@ -16,6 +16,7 @@ import FolderIcon from "@mui/icons-material/Folder";
 import BookIcon from "@mui/icons-material/Book";
 import colors from "../../../theme/base/colors";
 import { useNavigate } from "react-router-dom";
+import { Logout } from "@mui/icons-material";
 
 const pages = ["Products", "Pricing", "Blog"];
 
@@ -82,7 +83,7 @@ const Navbar: React.FC = () => {
       <Divider />
       <Divider />
       <Box display={"flex"} alignItems={"center"} padding={"14px"}>
-        <BookIcon sx={{ color: colors.primary.main }} />
+        <Logout sx={{ color: colors.primary.main }} />
         <Typography variant="h6" color="#000" marginLeft={"10px"}>
           Logout
         </Typography>

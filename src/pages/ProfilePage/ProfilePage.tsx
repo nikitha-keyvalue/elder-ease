@@ -51,22 +51,20 @@ const ProfilePage = () => {
   };
 
   const handleSubmit = async () => {
-    if (formData.full_name) {
-      try {
-        const response = await fetch(`${BASE_URL}/elder?client_id=4`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ...formData, age: Number(formData.age) }),
-        });
+    try {
+      const response = await fetch(`${BASE_URL}/elder?client_id=4`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, age: Number(formData.age) }),
+      });
 
-        if (response.status === 200) {
-          navigate("/elder-ease/home");
-        }
-      } catch (error) {
-        console.error("Error:", error);
+      if (response) {
+        navigate("/elder-ease/home");
       }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
@@ -82,7 +80,7 @@ const ProfilePage = () => {
           boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)",
         })}
       >
-        <Typography sx={{ ml: 2, color: "#00A699", fontWeight: "bold" }}>
+        <Typography sx={{ ml: 2, color: "rgb(7,55,99)", fontWeight: "bold" }}>
           Set up your profile
         </Typography>
       </Box>
@@ -137,7 +135,9 @@ const ProfilePage = () => {
             }}
           >
             <AddIcon />
-            <Typography sx={{ fontSize: "15px" }}>Add Elder</Typography>
+            <Typography sx={{ fontSize: "15px", textTransform: "capitalize" }}>
+              Add Elder
+            </Typography>
           </Button>
         </Grid>
       )}
@@ -151,11 +151,11 @@ const ProfilePage = () => {
         >
           <Grid container display="flex" justifyContent="space-between">
             <Grid item>
-              <Typography variant="h5">GRANDPAL DETAILS</Typography>
+              <Typography variant="h5">ELDER DETAILS</Typography>
             </Grid>
             <Grid item>
               <DeleteIcon
-                sx={{ color: "#00A699" }}
+                sx={{ color: "rgb(7,55,99)" }}
                 onClick={() => setAddNewMember(false)}
               />
             </Grid>

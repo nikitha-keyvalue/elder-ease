@@ -27,7 +27,7 @@ const ViewCompletedBooking: React.FC = () => {
         height="60px"
         sx={{ boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)" }}
       >
-        <Typography variant="h3" sx={{ color: "#00A699", ml: 2 }}>
+        <Typography variant="h3" sx={{ color: "rgb(7,55,99)", ml: 2 }}>
           Booking #102359
         </Typography>
       </Box>

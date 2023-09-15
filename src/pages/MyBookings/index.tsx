@@ -13,7 +13,7 @@ const MyBookings: React.FC = () => {
         height="60px"
         sx={{ boxShadow: "0px 3px 6px rgb(119 143 157 / 26%)" }}
       >
-        <Typography variant="h3" sx={{ ml: 3, color: "#00A699" }}>
+        <Typography variant="h3" sx={{ ml: 3, color: "rgb(7,55,99)" }}>
           My Bookings
         </Typography>
       </Box>
